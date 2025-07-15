@@ -1,0 +1,107 @@
+// Modal
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: var(--accent-03);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+/*     border: var(--accent-02) 3px solid; */
+}
+
+@property --angle-modal {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin-modal {
+    from {
+        --angle-modal: 0deg;
+    }
+
+    to {
+        --angle-modal: 360deg;
+    }
+}
+
+.animated-border-modal {
+    background: conic-gradient(from var(--angle-modal),
+            var(--primary-color) 0deg,
+            var(--accent-04) 90deg,
+            var(--accent-04) 180deg,
+            var(--accent-04) 270deg,
+            var(--primary-color) 360deg,
+            transparent);
+    animation: spin-modal 6s linear infinite;
+    margin: 8% auto;
+    padding: 2px;
+    border-radius: 10px;
+    max-width: 600px;
+    position: relative;
+}
+
+.modal-content h4 {
+    padding-left: 25px;
+    position: relative;
+    color: var(--primary-color);
+    margin: 10px 0;
+    margin-bottom: 1em;
+}
+
+.modal-content h4::before {
+    content: '';
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 14px;
+    height: 14px;
+    border-radius: 20px;
+    left: 0;
+    top: 5px;
+}
+
+.modal-content ul {
+    padding-left: 20px;
+    border-left: var(--accent-02) 2px solid;
+    margin-left: 17px;
+    color: var(--accent-02);
+}
+
+.modal-content ul li {
+    margin-bottom: 1em;
+    margin-left: 0.8em;
+}
+
+.modal-content .date {
+    background-color: var(--accent-04);
+    color: var(--accent-02);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Botón cerrar */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--primary-color);
+}

@@ -1,0 +1,84 @@
+/* Skills */
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  color: var(--accent-02);
+}
+
+.skills  >div {
+  background-color: var(--accent-04);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: var(--accent-04) 3px solid;
+  transition: border-color .5s;
+  cursor: pointer;
+}
+
+.skills>div:hover {
+  border-color: var(--primary-color);
+}
+
+.skills ion-icon {
+  color: var(--primary-color);
+  font-size: 32px;
+}
+
+.skills .circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+  background: conic-gradient(from 0deg,
+      var(--primary-color) 0%,
+      var(--primary-color) 0% var(--percent),
+      var(--accent-03) var(--percent));
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.skills .circle::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  background-color: var(--accent-04);
+  border-radius: 50%;
+}
+
+.skills .circle h4 {
+  position: relative;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 3;
+}
+
+.skills div:nth-child(7) {
+  background-color: inherit;
+}
+
+.skills .progress-bar:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+.skills .progress-bar p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills progress {
+  width: 100%;
+  appearance: none;
+  height: 10px;
+}
+
+.skills progress::-webkit-progress-bar {
+  border-radius: 10px;
+  background-color: var(--accent-04);
+}
+
+.skills progress::-webkit-progress-value {
+  border-radius: 10px;
+  background-color: var(--primary-color);
+}

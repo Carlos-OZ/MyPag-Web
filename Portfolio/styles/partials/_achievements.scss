@@ -1,0 +1,78 @@
+/* Achivements */
+
+section {
+  margin: 30px auto;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Nuevo contenedor animado */
+.animated-border {
+  position: relative;
+  border-radius: 12px;
+  padding: 2px; /* grosor del borde animado */
+  background: conic-gradient(from var(--angle), #aa4848, #4db88d, #245dad, #a92873, #aa4848);
+  animation: spin 5s linear infinite;
+  z-index: 0;
+  overflow: hidden;
+  margin: 20px 10px;
+}
+
+/* efecto blur */
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(1.5rem);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* El verdadero contenido */
+.achievements {
+  background-color: var(--accent-04);
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  cursor: pointer;
+}
+
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
+
+
+
+.achievements h3 {
+  font-size: 2.3em;
+}
+
+.achievements ion-icon {
+  margin-bottom: -5px;
+  color: var(--primary-color);
+  font-size: 0.9em;
+}
+
+.achievements p {
+  color: var(--accent-02);
+  line-height: 1.2;
+  font-size: 15px;
+}
+
