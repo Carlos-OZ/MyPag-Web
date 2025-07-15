@@ -1,0 +1,44 @@
+/* Testimonials */
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.testimonials img {
+  width: 70px;
+  border-radius: 7px;
+  float: left;
+  margin-right: 10px;
+}
+
+.testimonial-box:first-child {
+  background-color: transparent;
+  margin: auto;
+}
+
+.testimonial-box {
+  background-color: var(--accent-04);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.testimonials ion-icon {
+  color: orange;
+}
+
+.testimonials p {
+  color: var(--accent-02);
+  clear: left;
+}
+
+.testimonials h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.testimonials h1 {
+  font-size: 2em;
+}
